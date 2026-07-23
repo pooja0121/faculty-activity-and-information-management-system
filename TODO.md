@@ -1,0 +1,6 @@
+- [x] Add CSE banner URL to DepartmentFaculty.jsx and FacultyDetails.jsx
+- [x] Add ECE banner URL to DepartmentFaculty.jsx and FacultyDetails.jsx
+- [x] Add MECH banner URL to DepartmentFaculty.jsx and FacultyDetails.jsx
+- [x] Add AIDS banner URL to DepartmentFaculty.jsx and FacultyDetails.jsx
+- [x] Update all department banners to use the same NEC campus image
+- [x] Add EEE banner URL to DepartmentFaculty.jsx and FacultyDetails.jsx

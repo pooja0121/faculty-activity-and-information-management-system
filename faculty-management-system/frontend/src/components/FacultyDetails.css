@@ -1,0 +1,447 @@
+.faculty-details-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: auto;
+  font-family: Arial, sans-serif;
+  background: #f9fbff;
+  border-radius: 0;
+  box-shadow: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.department-banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.department-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.department-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.department-overlay h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.faculty-details-container.dark-theme {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.faculty-details-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.faculty-details-container header h1 {
+  font-size: 1.8rem;
+  color: #2a4bd7;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme header h1 {
+  color: #60a5fa;
+}
+
+.faculty-details-container header button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.faculty-details-container header button:hover {
+  background-color: #2563eb;
+}
+
+.faculty-details-container.dark-theme header button {
+  background-color: #60a5fa;
+}
+
+.faculty-details-container.dark-theme header button:hover {
+  background-color: #3b82f6;
+}
+
+.profile-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.profile-photo-container {
+  text-align: center;
+}
+
+.faculty-profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 0;
+  object-fit: cover;
+  border: 4px solid #3b82f6;
+}
+
+.faculty-header h2 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .faculty-header h2 {
+  color: #e0e0e0;
+}
+
+.faculty-id {
+  color: #6b7280;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .faculty-id {
+  color: #d1d5db;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab-buttons button {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tab-buttons button:hover {
+  background: #e5e7eb;
+}
+
+.tab-buttons button.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.faculty-details-container.dark-theme .tab-buttons button {
+  background: #404040;
+  color: #d1d5db;
+  border-color: #555;
+}
+
+.faculty-details-container.dark-theme .tab-buttons button:hover {
+  background: #555;
+}
+
+.faculty-details-container.dark-theme .tab-buttons button.active {
+  background: #60a5fa;
+  color: white;
+  border-color: #60a5fa;
+}
+
+.tab-content {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .tab-content {
+  background: #404040;
+  border-color: #555;
+}
+
+.tab-content p {
+  margin: 10px 0;
+  color: #374151;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .tab-content p {
+  color: #d1d5db;
+}
+
+.tab-content strong {
+  color: #111827;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .tab-content strong {
+  color: #e0e0e0;
+}
+
+.bio-section {
+  margin-top: 15px;
+  padding: 10px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .bio-section {
+  background: #555;
+}
+
+.tab-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tab-content li {
+  margin: 8px 0;
+  padding: 8px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .tab-content li {
+  background: #555;
+}
+
+.profile-chart {
+  flex: 0 0 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .profile-chart {
+  background: #2a2a2a;
+}
+
+.events-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .events-section {
+  background: #2a2a2a;
+}
+
+.events-section h2 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .events-section h2 {
+  color: #e0e0e0;
+}
+
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-item {
+  margin-bottom: 15px;
+}
+
+.event-card {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .event-card {
+  background: #404040;
+  border-color: #555;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.event-header h3 {
+  font-size: 1.2rem;
+  color: #111827;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .event-header h3 {
+  color: #e0e0e0;
+}
+
+.event-type {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .event-type {
+  background: #3b82f6;
+  color: #e0e0e0;
+}
+
+.event-details p {
+  margin: 5px 0;
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .event-details p {
+  color: #d1d5db;
+}
+
+.detail-item strong {
+  color: #374151;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .detail-item strong {
+  color: #e0e0e0;
+}
+
+.sub-details {
+  margin-left: 20px;
+  list-style: disc;
+}
+
+.sub-details li {
+  margin: 3px 0;
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .sub-details li {
+  color: #d1d5db;
+}
+
+.description-full {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .description-full {
+  background: #404040;
+}
+
+.graph-toggle {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.graph-toggle:hover {
+  background: #059669;
+}
+
+.faculty-details-container.dark-theme .graph-toggle {
+  background: #34d399;
+}
+
+.faculty-details-container.dark-theme .graph-toggle:hover {
+  background: #10b981;
+}
+
+.events-chart {
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .events-chart {
+  background: #2a2a2a;
+}
+
+.no-events {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  padding: 40px;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .no-events {
+  color: #d1d5db;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.faculty-details-container.dark-theme .loading {
+  color: #d1d5db;
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #dc3545;
+  font-weight: 600;
+}
