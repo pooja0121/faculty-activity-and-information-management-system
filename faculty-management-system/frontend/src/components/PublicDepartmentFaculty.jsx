@@ -25,7 +25,7 @@ const PublicDepartmentFaculty = () => {
       try {
         setLoading(true);
         setError('');
-        const response = await fetch(`http://localhost:5000/api/faculty/public/${deptCode}`);
+        const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/public/${deptCode}`);
         if (!response.ok) {
           throw new Error('Failed to fetch faculty data');
         }
@@ -58,7 +58,7 @@ const PublicDepartmentFaculty = () => {
             return (
               <div key={faculty._id} className="faculty-card">
                 <img
-                  src={hasProfilePic ? `http://localhost:5000${user.profilePicture}` : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iI2Y1ZjVmNSIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+PC90ZXh0Pjwvc3ZnPg=='}
+                  src={hasProfilePic ? `https://faculty-information-and-activity-c1b1.onrender.com${user.profilePicture}` : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iI2Y1ZjVmNSIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+PC90ZXh0Pjwvc3ZnPg=='}
                   alt="Profile"
                   className="faculty-photo"
                 />

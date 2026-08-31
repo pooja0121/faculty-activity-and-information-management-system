@@ -14,7 +14,7 @@ const PublicFacultyProfile = () => {
       try {
         setLoading(true);
         setError('');
-        const response = await fetch(`http://localhost:5000/api/faculty/public-profile/${facultyId}`);
+        const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/public-profile/${facultyId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch faculty profile');
         }
@@ -73,7 +73,7 @@ const PublicFacultyProfile = () => {
 
   const handleDownloadPDF = () => {
     const link = document.createElement('a');
-    link.href = `http://localhost:5000/api/faculty/download-profile/${facultyId}`;
+    link.href = `https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/download-profile/${facultyId}`;
     link.download = `${user.name.replace(/\s+/g, '_')}_Profile.pdf`;
     document.body.appendChild(link);
     link.click();
@@ -90,7 +90,7 @@ const PublicFacultyProfile = () => {
       <div className="profile-section">
         <div className="profile-header">
           {user.profilePicture && (
-            <img src={`http://localhost:5000${user.profilePicture}`} alt="Profile" className="profile-picture" />
+            <img src={`https://faculty-information-and-activity-c1b1.onrender.com${user.profilePicture}`} alt="Profile" className="profile-picture" />
           )}
           <div className="profile-info">
             <h2>{user.name}</h2>

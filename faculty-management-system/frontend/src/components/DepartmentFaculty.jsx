@@ -45,7 +45,7 @@ const DepartmentFaculty = ({ token }) => {
     try {
       setLoading(true);
       setError('');
-      const response = await fetch('http://localhost:5000/api/faculty/', {
+      const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -76,7 +76,7 @@ const DepartmentFaculty = ({ token }) => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:5000/api/faculty/${facultyId}`, {
+      const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/${facultyId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -95,7 +95,7 @@ const DepartmentFaculty = ({ token }) => {
 
   const fetchDepartmentStats = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/faculty/stats/${deptCode}`, {
+      const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/stats/${deptCode}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -112,7 +112,7 @@ const DepartmentFaculty = ({ token }) => {
   const handleAddFaculty = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/auth/add-faculty', {
+      const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/auth/add-faculty', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -239,7 +239,7 @@ const DepartmentFaculty = ({ token }) => {
             return (
               <div key={faculty._id} className="faculty-card">
                 <img
-                  src={hasProfilePic ? `http://localhost:5000${user.profilePicture}` : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iI2Y1ZjVmNSIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+PC90ZXh0Pjwvc3ZnPg=='}
+                  src={hasProfilePic ? `https://faculty-information-and-activity-c1b1.onrender.com${user.profilePicture}` : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iI2Y1ZjVmNSIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+PC90ZXh0Pjwvc3ZnPg=='}
                   alt="Profile"
                   className="faculty-photo"
                 />
@@ -258,7 +258,7 @@ const DepartmentFaculty = ({ token }) => {
                     className="action-btn pdf-btn"
                     onClick={() => {
                       if (window.confirm('Do you want to download the PDF?')) {
-                        window.open(`http://localhost:5000/api/faculty/download-profile/${facultyId}`, '_blank');
+                        window.open(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/download-profile/${facultyId}`, '_blank');
                       }
                     }}
                     title="Download PDF"

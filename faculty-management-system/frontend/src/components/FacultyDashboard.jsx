@@ -52,7 +52,7 @@ const FacultyDashboard = ({ token, onLogout }) => {
 
   const fetchFacultyData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/faculty/me', {
+      const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/me', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -94,7 +94,7 @@ const FacultyDashboard = ({ token, onLogout }) => {
   useEffect(() => {
     const checkNotifications = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/faculty/notifications', {
+        const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/notifications', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -183,7 +183,7 @@ const FacultyDashboard = ({ token, onLogout }) => {
     setSaveMessage('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/faculty/profile', {
+      const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -249,7 +249,7 @@ const FacultyDashboard = ({ token, onLogout }) => {
 
     try {
       setSaveLoading(true);
-      const response = await fetch('http://localhost:5000/api/faculty/upload-profile-picture', {
+      const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/upload-profile-picture', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -405,7 +405,7 @@ const FacultyDashboard = ({ token, onLogout }) => {
             <div className="avatar-circle">
               {facultyData?.user?.profilePicture ? (
                 <img 
-                  src={`http://localhost:5000${facultyData.user.profilePicture}`} 
+                  src={`https://faculty-information-and-activity-c1b1.onrender.com${facultyData.user.profilePicture}`} 
                   alt="Profile Avatar" 
                   className="avatar-img"
                   style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} 
@@ -556,7 +556,7 @@ const FacultyDashboard = ({ token, onLogout }) => {
                 <label>Profile Picture</label>
                 {profileData.profilePicture ? (
                   <img 
-                    src={`http://localhost:5000${profileData.profilePicture}`} 
+                    src={`https://faculty-information-and-activity-c1b1.onrender.com${profileData.profilePicture}`} 
                     alt="Profile Picture" 
                     style={{ width: '150px', height: '150px', objectFit: 'cover', borderRadius: '8px', display: 'block', marginBottom: '10px' }} 
                   />
@@ -732,7 +732,7 @@ const FacultyDashboard = ({ token, onLogout }) => {
             <div style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: facultyData?.user?.profilePicture ? 'transparent' : '#007bff' }}>
               {facultyData?.user?.profilePicture ? (
                 <img 
-                  src={`http://localhost:5000${facultyData.user.profilePicture}`} 
+                  src={`https://faculty-information-and-activity-c1b1.onrender.com${facultyData.user.profilePicture}`} 
                   alt="Avatar" 
                   style={{ width: '40px', height: '40px', objectFit: 'cover' }} 
                 />

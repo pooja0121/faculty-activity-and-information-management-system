@@ -23,7 +23,7 @@ const CompleteRegistration = ({ onLogin }) => {
 
   const fetchUserInfo = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/user', {
+      const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/auth/user', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (response.ok) {
@@ -48,7 +48,7 @@ const CompleteRegistration = ({ onLogin }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/complete-google-registration', {
+      const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/auth/complete-google-registration', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

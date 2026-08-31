@@ -53,7 +53,7 @@ const PublicDepartments = () => {
         const stats = {};
         let totalFaculties = 0;
         for (const dept of departments) {
-          const response = await fetch(`http://localhost:5000/api/faculty/public-stats/${dept.code}`);
+          const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/public-stats/${dept.code}`);
           if (response.ok) {
             const data = await response.json();
             stats[dept.code] = data;

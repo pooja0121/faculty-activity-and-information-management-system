@@ -29,7 +29,7 @@ const FacultyEvents = ({ token }) => {
       try {
         setLoading(true);
         setError('');
-        const response = await fetch(`http://localhost:5000/api/faculty/events/${facultyId}`, {
+        const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/events/${facultyId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -100,7 +100,7 @@ const FacultyEvents = ({ token }) => {
 
   const handleDownloadPDF = () => {
     const link = document.createElement('a');
-    link.href = `http://localhost:5000/api/faculty/download-events/${facultyId}`;
+    link.href = `https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/download-events/${facultyId}`;
     link.download = `${facultyName.replace(/\s+/g, '_')}_Events.pdf`;
     document.body.appendChild(link);
     link.click();

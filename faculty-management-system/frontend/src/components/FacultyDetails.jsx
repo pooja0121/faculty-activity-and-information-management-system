@@ -50,7 +50,7 @@ const FacultyDetails = ({ token }) => {
 
         if (!token) {
           // Public access
-          const response = await fetch(`http://localhost:5000/api/faculty/public-profile/${facultyId}`);
+          const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/public-profile/${facultyId}`);
           if (!response.ok) {
             throw new Error('Failed to fetch faculty profile');
           }
@@ -84,7 +84,7 @@ const FacultyDetails = ({ token }) => {
         } else {
           // Admin access
           // Fetch all faculty and filter by facultyId
-          const facultyResponse = await fetch('http://localhost:5000/api/faculty/', {
+          const facultyResponse = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -100,7 +100,7 @@ const FacultyDetails = ({ token }) => {
           setFaculty(facultyData);
 
           // Fetch events
-          const eventsResponse = await fetch(`http://localhost:5000/api/faculty/events/${facultyId}`, {
+          const eventsResponse = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/events/${facultyId}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -194,7 +194,7 @@ const FacultyDetails = ({ token }) => {
       <header>
         <h1>Faculty Profile: {user.name || 'Unknown'}</h1>
         <div className="header-buttons">
-          <button onClick={() => window.open(`http://localhost:5000/api/faculty/${token ? 'download-events' : 'download-profile'}/${facultyId}`, '_blank')}>
+          <button onClick={() => window.open(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/${token ? 'download-events' : 'download-profile'}/${facultyId}`, '_blank')}>
             Download PDF
           </button>
           <button onClick={() => navigate(-1)}>Back</button>
@@ -206,7 +206,7 @@ const FacultyDetails = ({ token }) => {
         <div className="profile-layout">
           <div className="profile-photo-container">
             <img
-              src={user.profilePicture ? `http://localhost:5000${user.profilePicture}` : '/placeholder.jpg'}
+              src={user.profilePicture ? `https://faculty-information-and-activity-c1b1.onrender.com${user.profilePicture}` : '/placeholder.jpg'}
               alt="Profile"
               className="faculty-profile-pic"
             />

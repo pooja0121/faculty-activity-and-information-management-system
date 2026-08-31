@@ -32,7 +32,7 @@ const AddPhdDegree = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/faculty/me/update', {
+      const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/me/update', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

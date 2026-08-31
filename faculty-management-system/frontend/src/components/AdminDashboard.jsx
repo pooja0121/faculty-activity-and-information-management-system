@@ -90,7 +90,7 @@ const AdminDashboard = ({ onLogout }) => {
     const fetchInactiveFaculty = async () => {
       try {
         const token = localStorage.getItem('adminToken');
-        const response = await fetch('http://localhost:5000/api/faculty/inactive', {
+        const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/inactive', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -117,7 +117,7 @@ const AdminDashboard = ({ onLogout }) => {
         let totalPublications = 0;
 
         for (const dept of departments) {
-          const response = await fetch(`http://localhost:5000/api/faculty/public-stats/${dept.code}`);
+          const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/public-stats/${dept.code}`);
           if (response.ok) {
             const data = await response.json();
             stats[dept.code] = data;
@@ -140,7 +140,7 @@ const AdminDashboard = ({ onLogout }) => {
     const fetchDepartmentEventsSummary = async () => {
       try {
         const token = localStorage.getItem('adminToken');
-        const response = await fetch('http://localhost:5000/api/faculty/department-events-summary', {
+        const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/department-events-summary', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -163,7 +163,7 @@ const AdminDashboard = ({ onLogout }) => {
       const fetchDepartmentEventsSummary = async () => {
         try {
           const token = localStorage.getItem('adminToken');
-          const response = await fetch('http://localhost:5000/api/faculty/department-events-summary', {
+          const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/department-events-summary', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -193,7 +193,7 @@ const AdminDashboard = ({ onLogout }) => {
         try {
           const stats = {};
           for (const dept of departments) {
-            const response = await fetch(`http://localhost:5000/api/faculty/public-stats/${dept.code}`);
+            const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/public-stats/${dept.code}`);
             if (response.ok) {
               const data = await response.json();
               stats[dept.code] = data;
@@ -218,7 +218,7 @@ const AdminDashboard = ({ onLogout }) => {
       try {
         const stats = {};
         for (const dept of departments) {
-          const response = await fetch(`http://localhost:5000/api/faculty/public-stats/${dept.code}`);
+          const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/public-stats/${dept.code}`);
           if (response.ok) {
             const data = await response.json();
             stats[dept.code] = data;
@@ -249,7 +249,7 @@ const AdminDashboard = ({ onLogout }) => {
 
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('http://localhost:5000/api/faculty/notify', {
+      const response = await fetch('https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/notify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -279,7 +279,7 @@ const AdminDashboard = ({ onLogout }) => {
     try {
       const token = localStorage.getItem('adminToken');
       const queryParams = new URLSearchParams(searchParams).toString();
-      const response = await fetch(`http://localhost:5000/api/faculty/search-advanced?${queryParams}`, {
+      const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/search-advanced?${queryParams}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -307,7 +307,7 @@ const AdminDashboard = ({ onLogout }) => {
   const handleDownloadSummary = async (eventType) => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:5000/api/faculty/summary/${selectedDept}/${eventType}`, {
+      const response = await fetch(`https://faculty-information-and-activity-c1b1.onrender.com/api/faculty/summary/${selectedDept}/${eventType}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
